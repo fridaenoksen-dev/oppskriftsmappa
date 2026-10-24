@@ -27,3 +27,9 @@ Når det ikke finnes oppskrifter med en ingrediens, gir API-et tilbake `null` i 
 Oversiktssiden henter dataene på serveren. Jeg trenger derfor ikke `useEffect` og `useState`, slik jeg gjorde i Video Poker.
 
 Feilsøking: Jeg fikk 404 på `/recipes` selv om mappene og filene var riktige. Utviklingsserveren hadde en gammel versjon av prosjektet lagret i `.next`-mappa. Jeg løste det ved å stoppe serveren, slette mappa og starte på nytt.
+
+## feature/recipe-card
+
+Jeg har satt opp komponenten `RecipeCard` som viser rettene med bilde og nanv. Komponenten får retten inn som en prop med typen `MealSummary`. Hele kortet er en `Link`til detaljsiden slik at man kan klikke hvor som helst på kortet og klikke enkelt med tastaturet.
+
+Bildet har en tom alt teskt siden navnet står i overskriften. En skjermleser ville lest dette to ganger hvis ikke.
