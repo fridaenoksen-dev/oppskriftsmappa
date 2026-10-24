@@ -1,4 +1,9 @@
-import { MealSummary, MealSummaryResponse } from "./types";
+import {
+  MealDetail,
+  MealSummary,
+  MealSummaryResponse,
+  MealDetailResponse,
+} from "./types";
 
 const BASE_URL = "https://www.themealdb.com/api/json/v1/1";
 
@@ -19,4 +24,21 @@ export async function getMealsByIngredient(
 
   const data: MealSummaryResponse = await response.json();
   return data.meals ?? [];
+}
+
+/**
+ * Henter frem én rett med detaljene fra ID.
+ * @param id ID-en til retten.
+ * @returns Retten eller null hvis den ikke eksisterer.
+ */
+export async function getMealById(id: string): Promise<MealDetail | null> {
+  const url = `${BASE_URL}/lookup.php?i=${id}`;
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error("Fant ikke oppskriften");
+  }
+
+  const data: MealDetailResponse = await response.json();
+  return data.meals?.[0] ?? null;
 }

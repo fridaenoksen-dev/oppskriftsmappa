@@ -7,3 +7,17 @@ export type MealSummary = {
 export type MealSummaryResponse = {
   meals: MealSummary[] | null;
 };
+
+export type MealDetail = {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
+  strCategory: string;
+  strArea: string;
+  strInstructions: string;
+  [key: string]: string | null;
+};
+
+export type MealDetailResponse = {
+  meals: MealDetail[] | null;
+};
