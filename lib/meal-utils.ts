@@ -23,3 +23,16 @@ export function getIngredients(meal: MealDetail): IngredientWithMeasure[] {
 
   return ingrediens;
 }
+
+/**
+ * Deler instruksjonene opp i avsnitt ved linjeskift.
+ * Fjerner de tomme linjene og mellomrommene rundt teksten.
+ * @param instructions instruksjonene som en lang tekst.
+ * @returns en lsite med avsnitt.
+ */
+export function getInstructionParagraphs(instructions: string): string[] {
+  return instructions
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line !== "");
+}

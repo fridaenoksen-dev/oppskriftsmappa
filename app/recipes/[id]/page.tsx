@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getMealById } from "@/lib/api";
-import { getIngredients } from "@/lib/meal-utils";
+import { getIngredients, getInstructionParagraphs } from "@/lib/meal-utils";
 
 type RecipePageProps = {
   params: Promise<{ id: string }>;
@@ -15,6 +15,7 @@ export default async function RecipePage({ params }: RecipePageProps) {
   }
 
   const ingredients = getIngredients(meal);
+  const paragraphs = getInstructionParagraphs(meal.strInstructions);
 
   return (
     <>
@@ -30,6 +31,12 @@ export default async function RecipePage({ params }: RecipePageProps) {
           </li>
         ))}
       </ul>
+      <h2>Slik gjør du</h2>
+      <ol>
+        {paragraphs.map((paragraph, index) => (
+          <li key={index}>{paragraph}</li>
+        ))}
+      </ol>
     </>
   );
 }
