@@ -1,6 +1,7 @@
 import { getMealsByIngredient } from "@/lib/api";
 import RecipeCard from "@/components/RecipeCard";
 import IngredientForm from "@/components/IngredientForm";
+import IngredientPicker from "@/components/IngredientPicker";
 
 type RecipesPageProps = {
   searchParams: Promise<{ ingredient?: string }>;
@@ -20,7 +21,11 @@ export default async function AllRecipesPage({
   return (
     <>
       <h1>Se alle oppskriftene</h1>
-      <IngredientForm selected={selected} />
+      <p>
+        Velg blant femten vanlige ting du kanskje har i kjøleskapet, og finn
+        middager som bruker akkurat den ingrediensen.
+      </p>
+      <IngredientPicker selected={selected} />
 
       {meals.length === 0 ? (
         <p>Fant ingen oppskrifter med denne ingrediensen. Prøv en annen.</p>
