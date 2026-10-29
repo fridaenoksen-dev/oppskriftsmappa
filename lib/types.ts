@@ -21,3 +21,8 @@ export type MealDetail = {
 export type MealDetailResponse = {
   meals: MealDetail[] | null;
 };
+
+export type IngredientWithMeasure = {
+  name: string;
+  measure: string;
+};
