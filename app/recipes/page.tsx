@@ -1,7 +1,7 @@
 import { getMealsByIngredient } from "@/lib/api";
 import RecipeCard from "@/components/RecipeCard";
-import IngredientForm from "@/components/IngredientForm";
 import IngredientPicker from "@/components/IngredientPicker";
+import styles from "./page.module.css";
 
 type RecipesPageProps = {
   searchParams: Promise<{ ingredient?: string }>;
@@ -30,7 +30,7 @@ export default async function AllRecipesPage({
       {meals.length === 0 ? (
         <p>Fant ingen oppskrifter med denne ingrediensen. Prøv en annen.</p>
       ) : (
-        <ul>
+        <ul className={styles.grid}>
           {meals.map((meal) => (
             <li key={meal.idMeal}>
               <RecipeCard meal={meal} />
