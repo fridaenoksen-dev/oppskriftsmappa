@@ -1,15 +1,18 @@
 import Link from "next/link";
+import styles from "./Header.module.css";
 
 export default function Header() {
   return (
-    <header>
-      <Link href="/">Oppskriftsmappa</Link>
+    <header className={styles.header}>
+      <Link href="/" className={styles.logo}>
+        Oppskriftsmappa
+      </Link>
       <nav>
-        <ul>
-          <li>
+        <ul className={styles.navList}>
+          <li className={styles.navLink}>
             <Link href="/recipes">Oppskrifter</Link>
           </li>
-          <li>
+          <li className={styles.navLink}>
             <Link href="/about">Om</Link>
           </li>
         </ul>

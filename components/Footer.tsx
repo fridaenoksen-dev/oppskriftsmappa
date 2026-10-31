@@ -1,6 +1,8 @@
+import styles from "./Footer.module.css";
+
 export default function Footer() {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <p>
         Oppskriftene er hentet fra{" "}
         <a href="https://www.themealdb.com">TheMealDB</a>

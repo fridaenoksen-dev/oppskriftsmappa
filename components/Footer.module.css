@@ -1,0 +1,13 @@
+.footer {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--space);
+  border-top: 2px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin-bottom: 0.25rem;
+}
