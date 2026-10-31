@@ -26,7 +26,7 @@ export function getIngredients(meal: MealDetail): IngredientWithMeasure[] {
 
 /**
  * Deler instruksjonene opp i avsnitt ved linjeskift.
- * Fjerner de tomme linjene og mellomrommene rundt teksten.
+ * Fjerner de tomme linjene, mellomrommene rundt teksten og linjer med nummere.
  * @param instructions instruksjonene som en lang tekst.
  * @returns en lsite med avsnitt.
  */
