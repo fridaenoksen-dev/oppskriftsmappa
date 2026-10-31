@@ -34,5 +34,6 @@ export function getInstructionParagraphs(instructions: string): string[] {
   return instructions
     .split("\n")
     .map((line) => line.trim())
-    .filter((line) => line !== "");
+    .filter((line) => line !== "")
+    .filter((line) => !/^(step\s*)?\d+\.?$/i.test(line));
 }
