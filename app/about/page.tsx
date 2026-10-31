@@ -4,7 +4,7 @@ export default function AboutPage() {
       <h1>Om Oppskriftsmappa</h1>
       <h2>Hvem er denne siden for?</h2>
       <p>
-        DOppskriftsmappa er for deg som står foran kjøleskapet i en travel
+        Oppskriftsmappa er for deg som står foran kjøleskapet i en travel
         hverdag og trenger en rask middagsidé. I stedet for å lete etter
         oppskrifter først, starter du med det du allerede har hjemme.
       </p>
