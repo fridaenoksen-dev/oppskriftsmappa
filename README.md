@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Oppskriftsmappa
 
-## Getting Started
+Oppskriftsmappa hjelper deg med å finne middagsidéer ut fra en hovedingrediens du allerede har hjemme. Du velger en ingrediens og nettsiden viser deg retter som bruker den. Hver rett har en egen side med ingredienser og fremgangsmåte.
 
-First, run the development server:
+Nettstedet er laget for travle hverdager hvor man vil ha en middagsidé raskt og ikke starte med handlelisten.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Kom i gang
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Du trenger Node.js 20.9 eller nyere.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Klon repositoryet og gå inn i mappa.
+2. Installer avhengighetene med `npm install`.
+3. Start utviklingsserveren med `npm run dev`.
+4. Åpne `http://localhost:3000` i nettleseren.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Bygg prosjektet med `npm run build`.
 
-## Learn More
+## API
 
-To learn more about Next.js, take a look at the following resources:
+Oppskriftene hentes fra [TheMealDB](https://www.themealdb.com), en åpen database med oppskrifter.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Nettstedet bruker den gratis testnøkkelen som ligger i adressen til APIet slik at det ikke trengs noen konfigurasjon eller hemmelig nøkkel.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Kjente begrensninger
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Brukeren kan velge blant femten ingredienser som jeg har valgt ut. APIet har mange flere.
+- Filteret finner kun retter der ingrediensen står oppført med nøyaktig samme navn. En rett med kyllingfilet vises for eksempel ikke når man velger kylling.
+- Oppskriftene er på engelsk, mens resten av nettstedet er på Norsk. Innholdet fra APIet er merket med `lang="en"`slik at skjermlesere bruker riktig uttale.
+- Det finnes ikke en søkefunksjon.
+- Bildene vises med vanlig `img` og ikke med `Image`fra Next.js, så de er ikke optimaliserte.
