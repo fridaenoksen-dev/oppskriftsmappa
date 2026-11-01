@@ -20,7 +20,7 @@ export default async function AllRecipesPage({
   const meals = await getMealsByIngredient(selected);
   return (
     <>
-      <h1>Se alle oppskriftene</h1>
+      <h1>Finn en middag</h1>
       <p>
         Velg blant femten vanlige ting du kanskje har i kjøleskapet, og finn
         middager som bruker akkurat den ingrediensen.
